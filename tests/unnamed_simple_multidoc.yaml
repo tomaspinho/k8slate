@@ -1,0 +1,15 @@
+params:
+  test: 1
+
+---
+
+one_key: {{ test }}
+
+---
+
+params:
+  test2: 2
+
+---
+
+one_key: {{ test2 }}
