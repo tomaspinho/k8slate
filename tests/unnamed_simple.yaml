@@ -3,4 +3,7 @@ params:
 
 ---
 
+kind: Deployment
+metadata:
+  name: "test"
 one_key: {{ test }}

@@ -3,6 +3,9 @@ params:
 
 ---
 
+kind: Deployment
+metadata:
+  name: "test-{{ test }}"
 one_key: {{ test }}
 
 ---
@@ -12,4 +15,7 @@ params:
 
 ---
 
+kind: Deployment
+metadata:
+  name: "test-{{ test2 }}"
 one_key: {{ test2 }}

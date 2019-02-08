@@ -6,5 +6,8 @@ params:
 
 ---
 
+kind: Deployment
+metadata:
+  name: "test-{{ test_1 }}"
 one_key: {{ test_1 }}
 two_keys: {{ test_2 }}
