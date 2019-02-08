@@ -14,10 +14,7 @@ Like this: `nginx-deployment.yaml`, for a deployment of `metadata.name = nginx` 
 
 ## Preamble spec
 
-Currently, `k8slate` supports two entries in the preamble: `params` and `name`.
+Currently, `k8slate` supports one entry in the preamble: `params`.
 
 `params` specifies the values to be injected as variables in the `jinja2` templating phase.
-If `params` is a list of dictionaries, the template will be rendered once per dictionary, taking into account its values. **Be warned**: if the no `name` was specified in the preamble (see `name`) and the `metadata.name` is not variable dependent, prior iterations will be rewritten, resulting in a single output file.
-
-`name` overrides the name of the files generated.
-**Be warned**: if the `jinja2` template generates multiple files (see `params`), the files will be named `[name]-#.yaml`.
+If `params` is a list of dictionaries, the template will be rendered once per dictionary, taking into account its values, which means that, if `metadata.name` does not take into account input from `params`, subsequent rendered paramater dictionaries will replace the prior generated file.
